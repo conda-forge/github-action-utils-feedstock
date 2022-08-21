@@ -1,5 +1,5 @@
 {% set name = "github-action-utils" %}
-{% set version = "1.0.1" %}
+{% set version = "1.0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/github-action-utils-{{ version }}.tar.gz
-  sha256: 2cd26382d8ee05a463c22477d9ee660bd23a97a5f3860a99946993617383772c
+  sha256: 1f6ff0e096886c0dce632f730cb9e3ead6ed0a5946ada71151bc83824284d9d1
 
 build:
   noarch: python
