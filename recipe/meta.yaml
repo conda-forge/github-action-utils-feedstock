@@ -1,24 +1,24 @@
 {% set name = "github-action-utils" %}
-{% set version = "1.1.0" %}
+{% set version = "2.0.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/github-action-utils-{{ version }}.tar.gz
-  sha256: 8aa40d90b89d814004160bb7e90b42cc07b55f41f66e4a4a32766d26c9ca3d61
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 4e5c3dc3df2ba976eeb3b9383bfba547ab8d7318a0f941c276ff766668b5754e
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
     - pip
     - python {{ python_min }}
-    - setuptools
+    - uv-build >=0.13.1,<0.14
   run:
     - python >={{ python_min }}
 
